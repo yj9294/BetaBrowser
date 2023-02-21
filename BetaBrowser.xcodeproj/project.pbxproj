@@ -13,7 +13,6 @@
 		C73D1A4D299B803100D3752F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A4B299B803100D3752F /* Main.storyboard */; };
 		C73D1A4F299B803300D3752F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A4E299B803300D3752F /* Assets.xcassets */; };
 		C73D1A52299B803300D3752F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A50299B803300D3752F /* LaunchScreen.storyboard */; };
-		C73D1A5B299B805800D3752F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C73D1A5A299B805800D3752F /* SnapKit */; };
 		C73D1A5E299B819C00D3752F /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A5D299B819C00D3752F /* LaunchVC.swift */; };
 		C73D1A60299B81A900D3752F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A5F299B81A900D3752F /* BaseVC.swift */; };
 		C73D1A63299B829A00D3752F /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A62299B829A00D3752F /* AppUtil.swift */; };
@@ -26,14 +25,15 @@
 		C73D1A74299CE10900D3752F /* HTMLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A73299CE10900D3752F /* HTMLVC.swift */; };
 		C73D1A76299CEB7A00D3752F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A75299CEB7A00D3752F /* AlertController.swift */; };
 		C73D1A78299CFF1F00D3752F /* CleanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A77299CFF1F00D3752F /* CleanVC.swift */; };
-		C73D1A7D299DC6A200D3752F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C73D1A7C299DC6A200D3752F /* FirebaseAnalytics */; };
-		C73D1A7F299DC6A200D3752F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C73D1A7E299DC6A200D3752F /* FirebaseCrashlytics */; };
-		C73D1A81299DC6A200D3752F /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C73D1A80299DC6A200D3752F /* FirebaseRemoteConfig */; };
-		C73D1A84299DC6E200D3752F /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C73D1A83299DC6E200D3752F /* FacebookCore */; };
 		C73D1A86299DC72800D3752F /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A85299DC72800D3752F /* FirebaseUtil.swift */; };
-		C73D1A89299DCA5100D3752F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C73D1A88299DCA5100D3752F /* Lottie */; };
 		C73D1A8B299DCC8F00D3752F /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A8A299DCC8F00D3752F /* data.json */; };
 		C73D1A8D299DCD0B00D3752F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A8C299DCD0B00D3752F /* GoogleService-Info.plist */; };
+		C76F177229A4599500820443 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177129A4599500820443 /* SnapKit */; };
+		C76F177529A459BD00820443 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177429A459BD00820443 /* FacebookCore */; };
+		C76F177829A45A1900820443 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177729A45A1900820443 /* FirebaseAnalytics */; };
+		C76F177A29A45A1900820443 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177929A45A1900820443 /* FirebaseCrashlytics */; };
+		C76F177C29A45A1900820443 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177B29A45A1900820443 /* FirebaseRemoteConfig */; };
+		C76F177F29A45A5E00820443 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177E29A45A5E00820443 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,12 +67,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73D1A7F299DC6A200D3752F /* FirebaseCrashlytics in Frameworks */,
-				C73D1A84299DC6E200D3752F /* FacebookCore in Frameworks */,
-				C73D1A7D299DC6A200D3752F /* FirebaseAnalytics in Frameworks */,
-				C73D1A5B299B805800D3752F /* SnapKit in Frameworks */,
-				C73D1A81299DC6A200D3752F /* FirebaseRemoteConfig in Frameworks */,
-				C73D1A89299DCA5100D3752F /* Lottie in Frameworks */,
+				C76F177229A4599500820443 /* SnapKit in Frameworks */,
+				C76F177A29A45A1900820443 /* FirebaseCrashlytics in Frameworks */,
+				C76F177529A459BD00820443 /* FacebookCore in Frameworks */,
+				C76F177829A45A1900820443 /* FirebaseAnalytics in Frameworks */,
+				C76F177C29A45A1900820443 /* FirebaseRemoteConfig in Frameworks */,
+				C76F177F29A45A5E00820443 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,12 +165,12 @@
 			);
 			name = BetaBrowser;
 			packageProductDependencies = (
-				C73D1A5A299B805800D3752F /* SnapKit */,
-				C73D1A7C299DC6A200D3752F /* FirebaseAnalytics */,
-				C73D1A7E299DC6A200D3752F /* FirebaseCrashlytics */,
-				C73D1A80299DC6A200D3752F /* FirebaseRemoteConfig */,
-				C73D1A83299DC6E200D3752F /* FacebookCore */,
-				C73D1A88299DCA5100D3752F /* Lottie */,
+				C76F177129A4599500820443 /* SnapKit */,
+				C76F177429A459BD00820443 /* FacebookCore */,
+				C76F177729A45A1900820443 /* FirebaseAnalytics */,
+				C76F177929A45A1900820443 /* FirebaseCrashlytics */,
+				C76F177B29A45A1900820443 /* FirebaseRemoteConfig */,
+				C76F177E29A45A5E00820443 /* Lottie */,
 			);
 			productName = BetaBrowser;
 			productReference = C73D1A42299B803100D3752F /* BetaBrowser.app */;
@@ -201,10 +201,10 @@
 			);
 			mainGroup = C73D1A39299B803100D3752F;
 			packageReferences = (
-				C73D1A59299B805800D3752F /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C73D1A7B299DC6A200D3752F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C73D1A82299DC6E200D3752F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				C73D1A87299DCA5100D3752F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				C76F177029A4599500820443 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C76F177329A459BD00820443 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C76F177D29A45A5D00820443 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = C73D1A43299B803100D3752F /* Products */;
 			projectDirPath = "";
@@ -484,7 +484,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C73D1A59299B805800D3752F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C76F177029A4599500820443 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -492,15 +492,7 @@
 				kind = branch;
 			};
 		};
-		C73D1A7B299DC6A200D3752F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		C73D1A82299DC6E200D3752F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		C76F177329A459BD00820443 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
@@ -508,7 +500,15 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		C73D1A87299DCA5100D3752F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		C76F177D29A45A5D00820443 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
@@ -519,34 +519,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C73D1A5A299B805800D3752F /* SnapKit */ = {
+		C76F177129A4599500820443 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C73D1A59299B805800D3752F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C76F177029A4599500820443 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C73D1A7C299DC6A200D3752F /* FirebaseAnalytics */ = {
+		C76F177429A459BD00820443 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C73D1A7B299DC6A200D3752F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		C73D1A7E299DC6A200D3752F /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C73D1A7B299DC6A200D3752F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		C73D1A80299DC6A200D3752F /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C73D1A7B299DC6A200D3752F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		C73D1A83299DC6E200D3752F /* FacebookCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C73D1A82299DC6E200D3752F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = C76F177329A459BD00820443 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookCore;
 		};
-		C73D1A88299DCA5100D3752F /* Lottie */ = {
+		C76F177729A45A1900820443 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C73D1A87299DCA5100D3752F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C76F177929A45A1900820443 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		C76F177B29A45A1900820443 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		C76F177E29A45A5E00820443 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C76F177D29A45A5D00820443 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */

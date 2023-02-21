@@ -32,7 +32,7 @@ class BaseVC: UIViewController {
 extension BaseVC {
     
     @objc func setupUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         let bg = UIImageView(image: UIImage(named: "launch_bg"))
         view.addSubview(bg)
         bg.snp.makeConstraints { make in
