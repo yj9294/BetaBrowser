@@ -58,6 +58,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if AppUtil.shared.enterbackground == true {
             FirebaseUtil.log(event: .openHot)
         }
+        if let vc = AppUtil.shared.root?.presentedViewController {
+            vc.dismiss(animated: false)
+        }
         AppUtil.shared.root?.launching()
         AppUtil.shared.enterbackground = false
     }

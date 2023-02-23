@@ -9,13 +9,41 @@ import UIKit
 
 class TabVC: BaseVC {
 
+    var willAppear = false
+
+    lazy var adView: GADNativeView = {
+        let view = GADNativeView()
+        view.backgroundColor = .white
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
+            if let ad = noti.object as? NativeADModel, self?.willAppear == true {
+                if Date().timeIntervalSince1970 - (GADUtil.share.tabNativeAdImpressionDate ?? Date(timeIntervalSinceNow: -11)).timeIntervalSince1970 > 10 {
+                    self?.adView.nativeAd = ad.nativeAd
+                    GADUtil.share.tabNativeAdImpressionDate = Date()
+                } else {
+                    NSLog("[ad] 10s tab 原生广告刷新或数据填充间隔.")
+                }
+            } else {
+                self?.adView.nativeAd = nil
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        willAppear = true
         FirebaseUtil.log(event: .tabShow)
+        GADUtil.share.load(.native)
+        GADUtil.share.load(.interstitial)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        willAppear = false
+        GADUtil.share.close(.native)
     }
 }
 
@@ -43,7 +71,14 @@ extension TabVC {
         collection.snp.makeConstraints { make in
             make.left.right.equalTo(view)
             make.top.equalTo(view.snp.topMargin)
-            make.bottom.equalTo(bottomView.snp.top)
+            make.bottom.equalTo(bottomView.snp.top).offset(-140)
+        }
+        
+        view.addSubview(adView)
+        adView.snp.makeConstraints { make in
+            make.top.equalTo(collection.snp.bottom).offset(12)
+            make.left.equalTo(view).offset(16)
+            make.right.equalTo(view).offset(-16)
         }
         
         let addButton = UIButton()
@@ -57,6 +92,7 @@ extension TabVC {
         let backButton = UIButton()
         bottomView.addSubview(backButton)
         backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(UIColor.black, for: .normal)
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         backButton.snp.makeConstraints { make in
             make.centerY.equalTo(bottomView)

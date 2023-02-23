@@ -22,6 +22,8 @@ class ViewController: UITabBarController {
         tabBar.isHidden = true
         viewControllers = [launchVC, homeVC]
         
+        GADUtil.share.requestRemoteConfig()
+        
         FirebaseUtil.log(property: .local)
         FirebaseUtil.log(event: .open)
         FirebaseUtil.log(event: .openCold)
@@ -33,6 +35,8 @@ class ViewController: UITabBarController {
     }
     
     func launched() {
+        GADUtil.share.load(.native)
+        GADUtil.share.load(.interstitial)
         selectedIndex = 1
     }
 

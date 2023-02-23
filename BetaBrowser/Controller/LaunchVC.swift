@@ -10,6 +10,9 @@ import UIKit
 class LaunchVC: BaseVC {
     
     private var launchTimer: Timer?
+    private var adTimer: Timer?
+    private var progress = 0.0
+
     
     lazy var progressView: UIProgressView = {
         let view = UIProgressView()
@@ -53,24 +56,49 @@ extension LaunchVC {
     
     
     func launching() {
+        GADUtil.share.load(.interstitial)
+        GADUtil.share.load(.native)
+        
         self.progressView.progress = 0.0
         if launchTimer != nil {
             launchTimer?.invalidate()
             launchTimer = nil
         }
         
-        let duration = 2.5
-        var progress = 0.0
+        if adTimer != nil {
+            adTimer?.invalidate()
+            adTimer = nil
+        }
         
-        launchTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { timer in
-            progress += 0.01 / duration
-            if progress > 1.0 {
+        var duration = 2.5 / 0.6
+        var isADStartLoaded = false
+        self.progress = 0
+        
+        launchTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] timer in
+            guard let self = self else { return }
+            self.progress += 0.01 / duration
+            if self.progress > 1.0 {
                 timer.invalidate()
-                AppUtil.shared.root?.launched()
+                GADUtil.share.show(.interstitial) { _ in
+                    if self.progress > 1.0 {
+                        AppUtil.shared.root?.launched()
+                    }
+                }
             } else {
-                self.progressView.progress = Float(progress)
+                self.progressView.progress = Float(self.progress)
+            }
+            if isADStartLoaded, GADUtil.share.isLoaded(.interstitial) {
+                isADStartLoaded = false
+                duration = 0.1
             }
         })
+        
+        adTimer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false, block: { timer in
+            timer.invalidate()
+            duration = 16
+            isADStartLoaded = true
+        })
+        
     }
     
 }

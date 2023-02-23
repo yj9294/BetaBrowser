@@ -12,6 +12,7 @@ class HomeVC: BaseVC {
     
     var startDate: Date?
     var isCancelClicked: Bool = false
+    var willAppear = false
     
     lazy var textField: UITextField = {
         let view = UITextField()
@@ -50,6 +51,12 @@ class HomeVC: BaseVC {
         return view
     }()
     
+    lazy var adView: GADNativeView = {
+        let view = GADNativeView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     lazy var lastButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "home_last"), for: .normal)
@@ -66,7 +73,6 @@ class HomeVC: BaseVC {
         return button
     }()
     
-    
     lazy var tabButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "home_tab"), for: .normal)
@@ -82,6 +88,18 @@ class HomeVC: BaseVC {
             ATTrackingManager.requestTrackingAuthorization { _ in
             }
         }
+        NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
+            if let ad = noti.object as? NativeADModel, self?.willAppear == true {
+                if Date().timeIntervalSince1970 - (GADUtil.share.homeNativeAdImpressionDate ?? Date(timeIntervalSinceNow: -11)).timeIntervalSince1970 > 10 {
+                    self?.adView.nativeAd = ad.nativeAd
+                    GADUtil.share.homeNativeAdImpressionDate = Date()
+                } else {
+                    NSLog("[ad] 10s home 原生广告刷新或数据填充间隔.")
+                }
+            } else {
+                self?.adView.nativeAd = nil
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -91,6 +109,11 @@ class HomeVC: BaseVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if AppUtil.shared.root?.selectedIndex == 1, willAppear == false {
+            willAppear = true
+            GADUtil.share.load(.interstitial)
+            GADUtil.share.load(.native)
+        }
         FirebaseUtil.log(event: .homeShow)
         if BrowserUtil.shared.webView.url != nil {
             view.addSubview(BrowserUtil.shared.webView)
@@ -100,7 +123,9 @@ class HomeVC: BaseVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        willAppear = false
         BrowserUtil.shared.webView.removeFromSuperview()
+        GADUtil.share.close(.native)
     }
 }
 
@@ -162,6 +187,8 @@ extension HomeVC {
         
         
         let icon = UIImageView(image: UIImage(named: "home_icon"))
+        icon.contentMode = .scaleAspectFill
+        icon.clipsToBounds = true
         contentView.addSubview(icon)
         icon.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
@@ -177,12 +204,19 @@ extension HomeVC {
         contentView.addSubview(collection)
         collection.register(HomeCell.classForCoder(), forCellWithReuseIdentifier: "HomeCell")
         collection.snp.makeConstraints { make in
-            make.top.equalTo(icon.snp.bottom).offset(60)
+            make.top.equalTo(icon.snp.bottom).offset(40)
             make.left.equalTo(contentView).offset(16)
             make.right.equalTo(contentView).offset(-16)
             make.height.equalTo(0)
         }
         
+        contentView.addSubview(adView)
+        adView.snp.makeConstraints { make in
+            make.top.equalTo(collection.snp.bottom).offset(20)
+            make.left.equalTo(view).offset(16)
+            make.right.equalTo(view).offset(-16)
+        }
+
         bottomView.addSubview(lastButton)
         lastButton.snp.makeConstraints { make in
             make.left.equalTo(bottomView).offset(16)
@@ -232,7 +266,11 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionView.snp.updateConstraints { make in
-            make.height.equalTo((width / 4.0 - 10) * 2 + 20)
+            if (view.window?.bounds.size.height ?? 0) <= 667 {
+                make.height.equalTo((width / 4.0 - 10) + 40)
+            } else {
+                make.height.equalTo((width / 4.0 - 10) * 2 + 20)
+            }
         }
         return HomeItem.allCases.count
     }
