@@ -74,7 +74,7 @@ extension HomeVC {
                 self.observerViewStatus()
                 FirebaseUtil.log(event: .tabNew, params: ["lig": "setting"])
             case .share:
-                var url = "https://itunes.apple.com/cn/app/id"
+                var url = "https://itunes.apple.com/cn/app/id6445883543"
                 if !BrowserUtil.shared.item.isNavigation, let text = BrowserUtil.shared.item.webView.url?.absoluteString {
                     url = text
                 }
@@ -101,7 +101,7 @@ extension HomeVC {
                 navi.modalPresentationStyle = .fullScreen
                 self.present(navi, animated: true)
             case .contact:
-                if let url = URL(string: "https://itunes.apple.com/cn/app/id") {
+                if let url = URL(string: "https://itunes.apple.com/cn/app/id6445883543") {
                     UIApplication.shared.open(url)
                 }
             }
