@@ -49,7 +49,7 @@ extension HomeVC {
             vc.handle = {
                 FirebaseUtil.log(event: .cleanSuccess)
                 FirebaseUtil.log(event: .cleanAlert)
-                self.alert("Clean successfully.")
+                self.alert("clean_successful".localized())
             }
         }
     }
@@ -84,10 +84,10 @@ extension HomeVC {
             case .copy:
                 if !BrowserUtil.shared.item.isNavigation, let text = BrowserUtil.shared.item.webView.url?.absoluteString {
                     UIPasteboard.general.setValue(text, forPasteboardType: kUTTypePlainText as String)
-                    self.alert("Copy successed.")
+                    self.alert("copy_successful".localized())
                 } else {
                     UIPasteboard.general.setValue("", forPasteboardType: kUTTypePlainText as String)
-                    self.alert("Copy successed.")
+                    self.alert("copy_successful".localized())
                 }
                 FirebaseUtil.log(event: .copyClick)
             case .terms:
@@ -100,10 +100,14 @@ extension HomeVC {
                 let navi = UINavigationController(rootViewController: vc)
                 navi.modalPresentationStyle = .fullScreen
                 self.present(navi, animated: true)
-            case .contact:
+            case .rate:
                 if let url = URL(string: "https://itunes.apple.com/cn/app/id6445883543") {
                     UIApplication.shared.open(url)
                 }
+            case .language:
+                AppUtil.shared.isTranslate.toggle()
+            case .dark:
+                AppUtil.shared.darkModel.toggle()
             }
         }
     }

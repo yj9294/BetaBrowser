@@ -29,8 +29,8 @@ extension CleanVC {
     override func setupUI() {
         super.setupUI()
         let label = UILabel()
-        label.text = "loading..."
-        label.textColor = UIColor(named: "#333333")
+        label.text = "cleaning".localized()
+        label.textColor = AppUtil.shared.darkModel ? .white : UIColor(named: "#333333")
         view.addSubview(label)
         label.snp.makeConstraints { make in
             make.centerX.equalTo(view)

@@ -40,7 +40,8 @@ extension UIViewController {
     
     func alert(_ confirm: (()->Void)? = nil) {
         let vc = AlertController()
-        vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        
+        vc.view.backgroundColor = AppUtil.shared.darkModel ? UIColor(white: 1, alpha: 0.5) : UIColor(white: 0, alpha: 0.5)
         vc.modalPresentationStyle = .overCurrentContext
         vc.handle = confirm
         if AppUtil.shared.root?.selectedIndex == 1 {

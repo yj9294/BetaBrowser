@@ -22,7 +22,7 @@ class HTMLVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = item.title
+        self.title = item.rawValue.localized()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,12 +39,13 @@ extension HTMLVC {
         super.setupUI()
         
         let textView = UITextView()
-        textView.textColor = UIColor(named: "#333333")
+        textView.textColor = AppUtil.shared.darkModel ? .white : UIColor(named: "#333333")
         textView.font = UIFont.systemFont(ofSize: 13)
         textView.text = item.desc
         textView.isEditable = false
         textView.isSelectable = false
         textView.backgroundColor = .clear
+        textView.contentOffset = .zero
         view.addSubview(textView)
         textView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.topMargin).offset(10)
@@ -56,17 +57,8 @@ extension HTMLVC {
     
 }
 
-enum HTMLItem {
+enum HTMLItem: String {
     case privacy, terms
-    
-    var title: String {
-        switch self {
-        case .privacy:
-            return "Privacy Policy"
-        case .terms:
-            return "Terms of Use"
-        }
-    }
     
     var desc: String {
         switch self {
