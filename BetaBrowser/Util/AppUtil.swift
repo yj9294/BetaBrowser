@@ -13,7 +13,7 @@ class AppUtil {
     var sceneDelegate: SceneDelegate? = nil
     var root: ViewController? = nil
     var enterbackground:Bool = false
-    var darkModel: Bool = UITraitCollection.current.userInterfaceStyle != .dark {
+    var darkModel: Bool = UITraitCollection.current.userInterfaceStyle == .dark {
         didSet {
             NotificationCenter.default.post(name: .darkModelDidUpdate, object: nil)
         }
