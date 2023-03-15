@@ -31,7 +31,7 @@ extension UIViewController {
     func alert(_ message: String) {
         let vc = UIAlertController(title: message, message: nil, preferredStyle: .alert)
         if AppUtil.shared.root?.selectedIndex == 1 {
-            AppUtil.shared.root?.present(vc, animated: true)
+            self.present(vc, animated: true)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             vc.dismiss(animated: true)

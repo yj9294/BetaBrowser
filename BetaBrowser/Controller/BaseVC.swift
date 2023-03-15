@@ -45,7 +45,7 @@ extension BaseVC {
             bg.snp.makeConstraints { make in
                 make.top.left.right.bottom.equalTo(view)
             }
-            view.backgroundColor = .white
+            view.backgroundColor = UIColor(named: "#6EEBC3")
         }
         
         NotificationCenter.default.addObserver(forName: .darkModelDidUpdate, object: nil, queue: .main) { [weak self] _ in

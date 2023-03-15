@@ -51,6 +51,18 @@ class HomeVC: BaseVC {
         return view
     }()
     
+    lazy var textTranslateButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(textTranslateAction), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var ocrTranslateButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(ocrTranslateAction), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var lastButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "home_last"), for: .normal)
@@ -79,6 +91,7 @@ class HomeVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkUtil.shared.startMonitoring()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             ATTrackingManager.requestTrackingAuthorization { _ in
             }
@@ -167,14 +180,50 @@ extension HomeVC {
             make.bottom.equalTo(bottomView.snp.top)
         }
         
-        
-        let icon = UIImageView(image: UIImage(named: "home_icon"))
-        contentView.addSubview(icon)
-        icon.snp.makeConstraints { make in
-            make.centerX.equalTo(contentView)
-            make.top.equalTo(contentView).offset(13)
+        let textBackground: UIImageView = UIImageView(image: UIImage(named: "text_translate"))
+        textBackground.isUserInteractionEnabled = true
+        textBackground.contentMode = .scaleAspectFill
+        contentView.addSubview(textBackground)
+        textBackground.snp.makeConstraints { make in
+            make.top.equalTo(contentView).offset(28)
+            make.left.equalTo(contentView).offset(28)
+            make.right.equalTo(contentView).offset(-28)
         }
         
+        let textIcon: UIImageView = UIImageView(image: UIImage(named: "text_translate_title"))
+        textBackground.addSubview(textIcon)
+        textIcon.snp.makeConstraints { make in
+            make.centerY.equalTo(textBackground)
+            make.right.equalTo(textBackground).offset(-26)
+        }
+        
+        let ocrBackground: UIImageView = UIImageView(image: UIImage(named: "ocr_translate"))
+        ocrBackground.isUserInteractionEnabled = true
+        ocrBackground.contentMode = .scaleAspectFill
+        contentView.addSubview(ocrBackground)
+        ocrBackground.snp.makeConstraints { make in
+            make.top.equalTo(textBackground.snp.bottom).offset(16)
+            make.left.equalTo(contentView).offset(28)
+            make.right.equalTo(contentView).offset(-28)
+        }
+        
+        let ocrIcon: UIImageView = UIImageView(image: UIImage(named: "ocr_translate_title"))
+        ocrBackground.addSubview(ocrIcon)
+        ocrIcon.snp.makeConstraints { make in
+            make.centerY.equalTo(ocrBackground)
+            make.right.equalTo(ocrBackground).offset(-26)
+        }
+        
+        contentView.addSubview(textTranslateButton)
+        textTranslateButton.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(textBackground)
+        }
+        
+        contentView.addSubview(ocrTranslateButton)
+        ocrTranslateButton.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(ocrBackground)
+        }
+
         let layout = UICollectionViewFlowLayout()
         collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection?.delegate = self
@@ -184,7 +233,7 @@ extension HomeVC {
         contentView.addSubview(collection!)
         collection?.register(HomeCell.classForCoder(), forCellWithReuseIdentifier: "HomeCell")
         collection?.snp.makeConstraints { make in
-            make.top.equalTo(icon.snp.bottom).offset(60)
+            make.top.equalTo(ocrBackground.snp.bottom).offset(36)
             make.left.equalTo(contentView).offset(16)
             make.right.equalTo(contentView).offset(-16)
             make.height.equalTo(0)

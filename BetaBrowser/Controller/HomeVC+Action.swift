@@ -60,6 +60,20 @@ extension HomeVC {
         self.present(vc, animated: true)
     }
     
+    @objc func textTranslateAction() {
+        let vc = TextTranslateVC()
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
+    }
+    
+    @objc func ocrTranslateAction() {
+        let vc = OCRVC()
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
+    }
+    
     @objc func settingAction() {
         let view = SettingView()
         if let bounds = self.view.window?.bounds {
