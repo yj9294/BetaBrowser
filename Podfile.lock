@@ -56,6 +56,9 @@ PODS:
     - FirebaseInstallations (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - Google-Mobile-Ads-SDK (9.13.0):
+    - GoogleAppMeasurement (< 11.0, >= 7.0)
+    - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (10.2.0):
     - GoogleAppMeasurement/AdIdSupport (= 10.2.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
@@ -117,6 +120,7 @@ PODS:
   - "GoogleToolboxForMac/NSString+URLArguments (2.3.2)"
   - GoogleToolboxForMac/StringEncoding (2.3.2):
     - GoogleToolboxForMac/Defines (= 2.3.2)
+  - GoogleUserMessagingPlatform (2.0.1)
   - GoogleUtilities/AppDelegateSwizzler (7.10.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -205,6 +209,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Firebase/RemoteConfig
+  - Google-Mobile-Ads-SDK
   - GoogleMLKit/LanguageID
   - GoogleMLKit/TextRecognition
   - GoogleMLKit/TextRecognitionChinese
@@ -223,10 +228,12 @@ SPEC REPOS:
     - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseRemoteConfig
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleMLKit
     - GoogleToolboxForMac
+    - GoogleUserMessagingPlatform
     - GoogleUtilities
     - GoogleUtilitiesComponents
     - GTMSessionFetcher
@@ -256,10 +263,12 @@ SPEC CHECKSUMS:
   FirebaseCrashlytics: df7406152189d48346deafb716806d7bd9ebb573
   FirebaseInstallations: 004915af170935e3a583faefd5f8bc851afc220f
   FirebaseRemoteConfig: 5bdeadd64a042dad0f6a38fee7e017818240c3d2
+  Google-Mobile-Ads-SDK: 465532d33dfc878f2f9aca281fddbcd4bf9c0197
   GoogleAppMeasurement: 3bc3a6484b7bb20dd8489242c4dd3c92a3e5107b
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleMLKit: 0017a6a8372e1a182139b9def4d89be5d87ca5a7
   GoogleToolboxForMac: 8bef7c7c5cf7291c687cf5354f39f9db6399ad34
+  GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
   GoogleUtilities: bad72cb363809015b1f7f19beb1f1cd23c589f95
   GoogleUtilitiesComponents: 679b2c881db3b615a2777504623df6122dd20afe
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
@@ -280,6 +289,6 @@ SPEC CHECKSUMS:
   Protobuf: 02524ec14183fe08fb259741659e79683788158b
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
 
-PODFILE CHECKSUM: 8971d759e621d39f1ebff8f46516463337f7d528
+PODFILE CHECKSUM: 210edded0f54f5926a814b44306dd4b5d0b3c6fb
 
 COCOAPODS: 1.11.3

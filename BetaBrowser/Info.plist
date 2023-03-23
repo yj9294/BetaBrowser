@@ -22,9 +22,9 @@
 	<key>FacebookClientToken</key>
 	<string>09d933c275efdcb78ed153ab11453570</string>
 	<key>FacebookDisplayName</key>
-	<string>BetaBrowser</string>
+	<string>PlanetBrowser</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-6334820302769810~6524722733</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
 	<key>GADNativeAdValidatorEnabled</key>

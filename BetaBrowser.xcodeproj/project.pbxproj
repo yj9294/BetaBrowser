@@ -42,13 +42,12 @@
 		C76F179529A4959300820443 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C76F179429A4959300820443 /* GADConfig.json */; };
 		C7AD679829B5E83E007FD186 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7AD679A29B5E83E007FD186 /* Localizable.strings */; };
 		C7AD679F29B5EDA4007FD186 /* EnglishLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7AD67A129B5EDA4007FD186 /* EnglishLocalizable.strings */; };
-		C7D6D14129AD92210061BAF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7D6D14029AD92210061BAF0 /* GoogleService-Info.plist */; };
-		C7D90CD829CBFB65000F128B /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CD729CBFB65000F128B /* GoogleMobileAds */; };
 		C7D90CDB29CBFC14000F128B /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CDA29CBFC14000F128B /* FacebookAEM */; };
 		C7D90CDD29CBFC14000F128B /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CDC29CBFC14000F128B /* FacebookBasics */; };
 		C7D90CDF29CBFC14000F128B /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CDE29CBFC14000F128B /* FacebookCore */; };
 		C7D90CE229CBFC50000F128B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CE129CBFC50000F128B /* SnapKit */; };
 		C7D90CE529CBFC95000F128B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CE429CBFC95000F128B /* Lottie */; };
+		C7D90CE929CC1FFB000F128B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7D90CE829CC1FFB000F128B /* GoogleService-Info.plist */; };
 		F87392C367E774FE37747B03 /* Pods_BetaBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D2FF960049973D4843B8AC /* Pods_BetaBrowser.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +98,7 @@
 		C7AD67A029B5EDA4007FD186 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EnglishLocalizable.strings; sourceTree = "<group>"; };
 		C7AD67A229B5EDA5007FD186 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/EnglishLocalizable.strings; sourceTree = "<group>"; };
 		C7AD67A329B5EDA6007FD186 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/EnglishLocalizable.strings; sourceTree = "<group>"; };
-		C7D6D14029AD92210061BAF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7D90CE829CC1FFB000F128B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4936729360177913BC4CC4B /* Pods-BetaBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetaBrowser.release.xcconfig"; path = "Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		FD62E1A4B400C7317517C7D2 /* Pods-BetaBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetaBrowser.debug.xcconfig"; path = "Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +113,6 @@
 				C7D90CDF29CBFC14000F128B /* FacebookCore in Frameworks */,
 				C7D90CDD29CBFC14000F128B /* FacebookBasics in Frameworks */,
 				C7D90CE229CBFC50000F128B /* SnapKit in Frameworks */,
-				C7D90CD829CBFB65000F128B /* GoogleMobileAds in Frameworks */,
 				F87392C367E774FE37747B03 /* Pods_BetaBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,10 +175,10 @@
 				C73D1A61299B828F00D3752F /* Util */,
 				C73D1A5C299B818B00D3752F /* Controller */,
 				C73D1A45299B803100D3752F /* AppDelegate.swift */,
-				C7D6D14029AD92210061BAF0 /* GoogleService-Info.plist */,
 				C7AD679A29B5E83E007FD186 /* Localizable.strings */,
 				C7AD67A129B5EDA4007FD186 /* EnglishLocalizable.strings */,
 				C73D1A47299B803100D3752F /* SceneDelegate.swift */,
+				C7D90CE829CC1FFB000F128B /* GoogleService-Info.plist */,
 				C73D1A49299B803100D3752F /* ViewController.swift */,
 				C76F179429A4959300820443 /* GADConfig.json */,
 				C73D1A4B299B803100D3752F /* Main.storyboard */,
@@ -253,7 +251,6 @@
 			);
 			name = BetaBrowser;
 			packageProductDependencies = (
-				C7D90CD729CBFB65000F128B /* GoogleMobileAds */,
 				C7D90CDA29CBFC14000F128B /* FacebookAEM */,
 				C7D90CDC29CBFC14000F128B /* FacebookBasics */,
 				C7D90CDE29CBFC14000F128B /* FacebookCore */,
@@ -291,7 +288,6 @@
 			);
 			mainGroup = C73D1A39299B803100D3752F;
 			packageReferences = (
-				C7D90CD629CBFB65000F128B /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
 				C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				C7D90CE029CBFC50000F128B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C7D90CE329CBFC94000F128B /* XCRemoteSwiftPackageReference "lottie-ios" */,
@@ -311,10 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73D1A52299B803300D3752F /* LaunchScreen.storyboard in Resources */,
+				C7D90CE929CC1FFB000F128B /* GoogleService-Info.plist in Resources */,
 				C7AD679829B5E83E007FD186 /* Localizable.strings in Resources */,
 				C7AD679F29B5EDA4007FD186 /* EnglishLocalizable.strings in Resources */,
 				C73D1A4F299B803300D3752F /* Assets.xcassets in Resources */,
-				C7D6D14129AD92210061BAF0 /* GoogleService-Info.plist in Resources */,
 				C73D1A4D299B803100D3752F /* Main.storyboard in Resources */,
 				C76F179529A4959300820443 /* GADConfig.json in Resources */,
 				C73D1A8B299DCC8F00D3752F /* data.json in Resources */,
@@ -586,11 +582,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59CN4J44AC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetaBrowser/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlanetBrowser;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera permissions to recognize text.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -608,6 +605,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BetaBrowser.gocod.girl.boy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -623,11 +621,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59CN4J44AC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetaBrowser/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlanetBrowser;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera permissions to recognize text.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -645,6 +644,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BetaBrowser.gocod.girl.boy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -678,14 +678,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C7D90CD629CBFB65000F128B /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/quanghits/GoogleMobileAds";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -713,11 +705,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C7D90CD729CBFB65000F128B /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C7D90CD629CBFB65000F128B /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
-			productName = GoogleMobileAds;
-		};
 		C7D90CDA29CBFC14000F128B /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
