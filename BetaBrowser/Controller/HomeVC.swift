@@ -13,6 +13,7 @@ class HomeVC: BaseVC {
     var startDate: Date?
     var isCancelClicked: Bool = false
     var willAppear = false
+    var collection: UICollectionView? = nil
     
     lazy var textField: UITextField = {
         let view = UITextField()
@@ -57,6 +58,18 @@ class HomeVC: BaseVC {
         return view
     }()
     
+    lazy var textTranslateButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(textTranslateAction), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var ocrTranslateButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(ocrTranslateAction), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var lastButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "home_last"), for: .normal)
@@ -84,6 +97,7 @@ class HomeVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkUtil.shared.startMonitoring()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             ATTrackingManager.requestTrackingAuthorization { _ in
             }
@@ -145,6 +159,10 @@ extension HomeVC {
         }
         
         searchView.addSubview(textField)
+        self.textField.textColor = AppUtil.shared.darkModel ? UIColor(named: "#333333") : .white
+        if AppUtil.shared.darkModel {
+            self.textField.attributedPlaceholder = NSAttributedString(string: "search_placeholder".localized(), attributes: [NSAttributedString.Key.foregroundColor: AppUtil.shared.darkModel ? UIColor(white: 0, alpha: 0.4): UIColor(white: 1, alpha: 0.4)])
+        }
         textField.snp.makeConstraints { make in
             make.top.equalTo(searchView).offset(18)
             make.left.equalTo(searchView).offset(16)
@@ -153,12 +171,14 @@ extension HomeVC {
         }
         
         searchView.addSubview(searchButton)
+        searchButton.tintColor = AppUtil.shared.darkModel ? .black : .white
         searchButton.snp.makeConstraints { make in
             make.centerY.equalTo(searchView)
             make.right.equalTo(searchView).offset(-16)
         }
         
         searchView.addSubview(closeButton)
+        closeButton.tintColor = AppUtil.shared.darkModel ? .black : .white
         closeButton.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(searchButton)
         }
@@ -185,14 +205,49 @@ extension HomeVC {
             make.bottom.equalTo(bottomView.snp.top)
         }
         
+        let textBackground: UIImageView = UIImageView(image: UIImage(named: "text_translate"))
+        textBackground.isUserInteractionEnabled = true
+        textBackground.contentMode = .scaleAspectFill
+        contentView.addSubview(textBackground)
+        textBackground.snp.makeConstraints { make in
+            make.top.equalTo(contentView).offset(28)
+            make.left.equalTo(contentView).offset(28)
+            make.right.equalTo(contentView).offset(-28)
+        }
+    
         
-        let icon = UIImageView(image: UIImage(named: "home_icon"))
-        icon.contentMode = .scaleAspectFill
-        icon.clipsToBounds = true
-        contentView.addSubview(icon)
-        icon.snp.makeConstraints { make in
-            make.centerX.equalTo(contentView)
-            make.top.equalTo(contentView).offset(13)
+        let textIcon: UIImageView = UIImageView(image: UIImage(named: "text_translate_title"))
+        textBackground.addSubview(textIcon)
+        textIcon.snp.makeConstraints { make in
+            make.centerY.equalTo(textBackground)
+            make.right.equalTo(textBackground).offset(-26)
+        }
+        
+        let ocrBackground: UIImageView = UIImageView(image: UIImage(named: "ocr_translate"))
+        ocrBackground.isUserInteractionEnabled = true
+        ocrBackground.contentMode = .scaleAspectFill
+        contentView.addSubview(ocrBackground)
+        ocrBackground.snp.makeConstraints { make in
+            make.top.equalTo(textBackground.snp.bottom).offset(16)
+            make.left.equalTo(contentView).offset(28)
+            make.right.equalTo(contentView).offset(-28)
+        }
+        
+        let ocrIcon: UIImageView = UIImageView(image: UIImage(named: "ocr_translate_title"))
+        ocrBackground.addSubview(ocrIcon)
+        ocrIcon.snp.makeConstraints { make in
+            make.centerY.equalTo(ocrBackground)
+            make.right.equalTo(ocrBackground).offset(-26)
+        }
+        
+        contentView.addSubview(textTranslateButton)
+        textTranslateButton.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(textBackground)
+        }
+        
+        contentView.addSubview(ocrTranslateButton)
+        ocrTranslateButton.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(ocrBackground)
         }
         
         let layout = UICollectionViewFlowLayout()
@@ -204,26 +259,28 @@ extension HomeVC {
         contentView.addSubview(collection)
         collection.register(HomeCell.classForCoder(), forCellWithReuseIdentifier: "HomeCell")
         collection.snp.makeConstraints { make in
-            make.top.equalTo(icon.snp.bottom).offset(40)
+            make.top.equalTo(ocrBackground.snp.bottom).offset(36)
             make.left.equalTo(contentView).offset(16)
             make.right.equalTo(contentView).offset(-16)
             make.height.equalTo(0)
         }
-        
+                
         contentView.addSubview(adView)
         adView.snp.makeConstraints { make in
             make.top.equalTo(collection.snp.bottom).offset(20)
             make.left.equalTo(view).offset(16)
             make.right.equalTo(view).offset(-16)
         }
-
+        
         bottomView.addSubview(lastButton)
+        lastButton.tintColor = AppUtil.shared.darkModel ? .white : .black
         lastButton.snp.makeConstraints { make in
             make.left.equalTo(bottomView).offset(16)
             make.top.bottom.equalTo(bottomView)
         }
         
         bottomView.addSubview(nextButton)
+        nextButton.tintColor = AppUtil.shared.darkModel ? .white : .black
         nextButton.snp.makeConstraints { make in
             make.left.equalTo(lastButton.snp.right)
             make.top.bottom.equalTo(bottomView)
@@ -233,12 +290,15 @@ extension HomeVC {
         cleanButton.setImage(UIImage(named: "home_clean"), for: .normal)
         cleanButton.addTarget(self, action: #selector(cleanAction), for: .touchUpInside)
         bottomView.addSubview(cleanButton)
+        cleanButton.tintColor = AppUtil.shared.darkModel ? .white : .black
         cleanButton.snp.makeConstraints { make in
             make.top.bottom.equalTo(bottomView)
             make.left.equalTo(nextButton.snp.right)
         }
         
         bottomView.addSubview(tabButton)
+        tabButton.tintColor = AppUtil.shared.darkModel ? .white : .black
+        tabButton.setTitleColor(tabButton.tintColor, for: .normal)
         tabButton.snp.makeConstraints { make in
             make.top.bottom.equalTo(bottomView)
             make.left.equalTo(cleanButton.snp.right)
@@ -248,6 +308,7 @@ extension HomeVC {
         settingButton.setImage(UIImage(named: "home_setting"), for: .normal)
         settingButton.addTarget(self, action: #selector(settingAction), for: .touchUpInside)
         bottomView.addSubview(settingButton)
+        settingButton.tintColor = AppUtil.shared.darkModel ? .white : .black
         settingButton.snp.makeConstraints { make in
             make.top.bottom.equalTo(bottomView)
             make.right.equalTo(bottomView).offset(-16)
@@ -258,6 +319,28 @@ extension HomeVC {
             make.width.equalTo(tabButton)
         }
         
+        NotificationCenter.default.addObserver(forName: .darkModelDidUpdate, object: nil, queue: .main) { [weak self] _ in
+            guard let self = self else {return }
+            self.textField.textColor = AppUtil.shared.darkModel ? UIColor(named: "#333333") : .white
+            if AppUtil.shared.darkModel {
+                self.textField.attributedPlaceholder = NSAttributedString(string: "search_placeholder".localized(), attributes: [NSAttributedString.Key.foregroundColor: AppUtil.shared.darkModel ? UIColor(white: 0, alpha: 0.4): UIColor(white: 1, alpha: 0.4)])
+            }
+            
+            self.searchButton.tintColor = AppUtil.shared.darkModel ? .black : .white
+            self.closeButton.tintColor = AppUtil.shared.darkModel ? .black : .white
+            self.lastButton.tintColor = AppUtil.shared.darkModel ? .white : .black
+            self.nextButton.tintColor = AppUtil.shared.darkModel ? .white : .black
+            cleanButton.tintColor = AppUtil.shared.darkModel ? .white : .black
+            self.tabButton.tintColor = AppUtil.shared.darkModel ? .white : .black
+            settingButton.tintColor = AppUtil.shared.darkModel ? .white : .black
+            self.tabButton.setTitleColor(self.tabButton.tintColor, for: .normal)
+            self.collection?.reloadData()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .languageUpdate, object: nil, queue: .main) { [weak self]_ in
+            guard let self = self else {return }
+            self.collection?.reloadData()
+        }
     }
     
 }
@@ -267,7 +350,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionView.snp.updateConstraints { make in
             if (view.window?.bounds.size.height ?? 0) <= 667 {
-                make.height.equalTo((width / 4.0 - 10) + 40)
+                make.height.equalTo(40)
             } else {
                 make.height.equalTo((width / 4.0 - 10) * 2 + 20)
             }
@@ -348,7 +431,8 @@ class HomeCell: UICollectionViewCell {
             if let image = item?.icon {
                 icon.image = UIImage(named: image)
             }
-            title.text = item?.title
+            title.text = item?.rawValue.localized()
+            title.textColor = AppUtil.shared.darkModel ? .white : .black
         }
     }
     
@@ -374,9 +458,9 @@ enum HomeItem: String, CaseIterable {
     var icon: String {
         return "home_\(self)"
     }
-    
-    var title: String {
-        return self.rawValue.capitalized
-    }
-    
+}
+        
+extension Notification.Name {
+    static let darkModelDidUpdate = Notification.Name(rawValue: "dark.model.updated")
+    static let languageUpdate = Notification.Name(rawValue: "language.update")
 }

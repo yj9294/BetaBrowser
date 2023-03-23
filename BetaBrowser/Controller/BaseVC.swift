@@ -15,6 +15,11 @@ class BaseVC: UIViewController {
         setupUI()
     }
     
+    private lazy  var bg: UIImageView = {
+        let bg = UIImageView(image: UIImage(named: "launch_bg"))
+        return bg
+    }()
+    
     var width: CGFloat {
         view.window?.frame.size.width ?? 100
     }
@@ -32,11 +37,28 @@ class BaseVC: UIViewController {
 extension BaseVC {
     
     @objc func setupUI() {
-        view.backgroundColor = .white
-        let bg = UIImageView(image: UIImage(named: "launch_bg"))
-        view.addSubview(bg)
-        bg.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(view)
+        if AppUtil.shared.darkModel {
+            view.backgroundColor = .black
+        } else {
+            let bg = UIImageView(image: UIImage(named: "launch_bg"))
+            view.addSubview(bg)
+            bg.snp.makeConstraints { make in
+                make.top.left.right.bottom.equalTo(view)
+            }
+            view.backgroundColor = UIColor(named: "#6EEBC3")
+        }
+        
+        NotificationCenter.default.addObserver(forName: .darkModelDidUpdate, object: nil, queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            self.view.backgroundColor = AppUtil.shared.darkModel ? .black : .white
+            if !AppUtil.shared.darkModel {
+                self.view.insertSubview(self.bg, at: 0)
+                self.bg.snp.makeConstraints { make in
+                    make.top.left.right.bottom.equalTo(self.view)
+                }
+            } else {
+                self.bg.removeFromSuperview()
+            }
         }
     }
     

@@ -1,0 +1,32 @@
+/*
+  Localizable.strings
+  BetaBrowser
+
+  Created by yangjian on 2023/3/6.
+  
+*/
+
+"facebook" = "Facebook";
+"google" = "Google";
+"youtube" = "Youtube";
+"twitter" = "Twitter";
+"instagram" = "Instagram";
+"amazon" = "Amazon";
+"gmail" = "Gmail";
+"yahoo" = "Yahoo";
+"new" = "New";
+"copy" = "Copy";
+"share" = "Share";
+"terms" = "Terms of Use";
+"rate" = "Connect Us";
+"private" = "Privacy Policy";
+"dark" = "Dark Model";
+"language" = "Lanauage";
+"search_placeholder" = "Search or enter address";
+"clean_alert" = "Close Tabs and Clear Data";
+"cancel_title" = "Cancel";
+"confirm_title" = "Confirm";
+"cleaning" = "Cleaning...";
+"clean_successful" = "Clean Successfully";
+"copy_successful" = "Copy Successfully";
+"back" = "Back";

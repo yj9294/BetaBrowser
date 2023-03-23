@@ -689,9 +689,3 @@ extension NativeADModel: GADNativeAdDelegate {
 extension Notification.Name {
     static let nativeUpdate = Notification.Name(rawValue: "homeNativeUpdate")
 }
-
-extension String {
-    static let adConfig = "adConfig"
-    static let adLimited = "adLimited"
-    static let adUnAvaliableDate = "adUnAvaliableDate"
-}

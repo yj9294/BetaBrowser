@@ -24,7 +24,7 @@ extension AlertController {
         self.view.backgroundColor = .clear
         
         let contentView = UIView()
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = AppUtil.shared.darkModel ? .black : .white
         contentView.cornerRadius = 12
         view.addSubview(contentView)
         contentView.snp.makeConstraints { make in
@@ -41,8 +41,8 @@ extension AlertController {
         }
         
         let label = UILabel()
-        label.text = "Close Tabs and Clear Data"
-        label.textColor = UIColor(named: "#333333")
+        label.text = "clean_alert".localized()
+        label.textColor = AppUtil.shared.darkModel ? .white : UIColor(named: "#333333")
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.top.equalTo(icon.snp.bottom).offset(14)
@@ -50,7 +50,7 @@ extension AlertController {
         }
         
         let cancel = UIButton()
-        cancel.setTitle("Cancel", for: .normal)
+        cancel.setTitle("cancel_title".localized(), for: .normal)
         cancel.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         cancel.cornerRadius = 22
         cancel.backgroundColor = UIColor(named: "#E7E7E7")
@@ -64,7 +64,7 @@ extension AlertController {
         }
         
         let confirm = UIButton()
-        confirm.setTitle("Confirm", for: .normal)
+        confirm.setTitle("confirm_title".localized(), for: .normal)
         confirm.addTarget(self, action: #selector(confirmAction), for: .touchUpInside)
         confirm.cornerRadius = 22
         confirm.backgroundColor = UIColor(named: "#28CF7A")

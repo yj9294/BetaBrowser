@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  BetaBrowser
+
+  Created by yangjian on 2023/3/6.
+  
+*/
+
+"facebook" = "फेसबुक";
+"google" = "गूगल";
+"youtube" = "यूट्यूब";
+"twitter" = "ट्विटर";
+"instagram" = "Instagram";
+"amazon" = "वीरांगना";
+"gmail" = "जीमेल लगीं";
+"yahoo" = "याहू";
+"new" = "नया";
+"copy" = "कॉपी";
+"share" = "शेयर करना";
+"terms" = "उपयोग की शर्तें";
+"rate" = "हमें कनेक्ट करें";
+"privacy" = "गोपनीयता नीति";
+"dark" = "डार्क मॉडल";
+"language" = "लैंडौएज";
+"search_placeholder" = "पता खोजें या दर्ज करें";
+"clean_alert" = "टैब बंद करें और डेटा साफ़ करें";
+"cancel_title" = "रद्द करें";
+"confirm_title" = "पुष्टि करें";
+"cleaning" = "सफाई";
+"clean_successful" = "सफलतापूर्वक साफ किया गया";
+"copy_successful" = "कॉपी सफलतापूर्वक";
+"back" = "पीछे";

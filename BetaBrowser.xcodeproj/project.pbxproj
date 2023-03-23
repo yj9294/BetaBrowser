@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C725033F29C00BEB00EE4232 /* TextTranslateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725033E29C00BEB00EE4232 /* TextTranslateVC.swift */; };
+		C725034129C04C8B00EE4232 /* TranslateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725034029C04C8B00EE4232 /* TranslateUtil.swift */; };
+		C725034329C0515300EE4232 /* ProfileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725034229C0515300EE4232 /* ProfileUtil.swift */; };
+		C725034529C052C000EE4232 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725034429C052C000EE4232 /* NetworkUtil.swift */; };
+		C725034729C057BC00EE4232 /* TextResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725034629C057BC00EE4232 /* TextResultVC.swift */; };
+		C725034929C058B800EE4232 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725034829C058B800EE4232 /* LoadingView.swift */; };
 		C73D1A46299B803100D3752F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A45299B803100D3752F /* AppDelegate.swift */; };
 		C73D1A48299B803100D3752F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A47299B803100D3752F /* SceneDelegate.swift */; };
 		C73D1A4A299B803100D3752F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A49299B803100D3752F /* ViewController.swift */; };
@@ -27,20 +33,33 @@
 		C73D1A78299CFF1F00D3752F /* CleanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A77299CFF1F00D3752F /* CleanVC.swift */; };
 		C73D1A86299DC72800D3752F /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D1A85299DC72800D3752F /* FirebaseUtil.swift */; };
 		C73D1A8B299DCC8F00D3752F /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A8A299DCC8F00D3752F /* data.json */; };
-		C73D1A8D299DCD0B00D3752F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C73D1A8C299DCD0B00D3752F /* GoogleService-Info.plist */; };
-		C76F177229A4599500820443 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177129A4599500820443 /* SnapKit */; };
-		C76F177529A459BD00820443 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177429A459BD00820443 /* FacebookCore */; };
-		C76F177829A45A1900820443 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177729A45A1900820443 /* FirebaseAnalytics */; };
-		C76F177A29A45A1900820443 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177929A45A1900820443 /* FirebaseCrashlytics */; };
-		C76F177C29A45A1900820443 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177B29A45A1900820443 /* FirebaseRemoteConfig */; };
-		C76F177F29A45A5E00820443 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C76F177E29A45A5E00820443 /* Lottie */; };
-		C76F178F29A46BBC00820443 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C76F178E29A46BBC00820443 /* GoogleMobileAds */; };
+		C76EE8AB29C06E7D00B8B2B2 /* CountryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76EE8AA29C06E7D00B8B2B2 /* CountryListVC.swift */; };
+		C76EE8AD29C0783D00B8B2B2 /* OCRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76EE8AC29C0783D00B8B2B2 /* OCRVC.swift */; };
+		C76EE8AF29C07EB900B8B2B2 /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76EE8AE29C07EB900B8B2B2 /* CameraUtil.swift */; };
+		C76EE8B129C0971000B8B2B2 /* OCRResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76EE8B029C0971000B8B2B2 /* OCRResultVC.swift */; };
 		C76F179129A48F1200820443 /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F179029A48F1200820443 /* GADUtil.swift */; };
 		C76F179329A4903300820443 /* GADNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F179229A4903300820443 /* GADNativeView.swift */; };
 		C76F179529A4959300820443 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C76F179429A4959300820443 /* GADConfig.json */; };
+		C7AD679829B5E83E007FD186 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7AD679A29B5E83E007FD186 /* Localizable.strings */; };
+		C7AD679F29B5EDA4007FD186 /* EnglishLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7AD67A129B5EDA4007FD186 /* EnglishLocalizable.strings */; };
+		C7D6D14129AD92210061BAF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7D6D14029AD92210061BAF0 /* GoogleService-Info.plist */; };
+		C7D90CD829CBFB65000F128B /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CD729CBFB65000F128B /* GoogleMobileAds */; };
+		C7D90CDB29CBFC14000F128B /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CDA29CBFC14000F128B /* FacebookAEM */; };
+		C7D90CDD29CBFC14000F128B /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CDC29CBFC14000F128B /* FacebookBasics */; };
+		C7D90CDF29CBFC14000F128B /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CDE29CBFC14000F128B /* FacebookCore */; };
+		C7D90CE229CBFC50000F128B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CE129CBFC50000F128B /* SnapKit */; };
+		C7D90CE529CBFC95000F128B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C7D90CE429CBFC95000F128B /* Lottie */; };
+		F87392C367E774FE37747B03 /* Pods_BetaBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D2FF960049973D4843B8AC /* Pods_BetaBrowser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60D2FF960049973D4843B8AC /* Pods_BetaBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetaBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C725033E29C00BEB00EE4232 /* TextTranslateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslateVC.swift; sourceTree = "<group>"; };
+		C725034029C04C8B00EE4232 /* TranslateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateUtil.swift; sourceTree = "<group>"; };
+		C725034229C0515300EE4232 /* ProfileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUtil.swift; sourceTree = "<group>"; };
+		C725034429C052C000EE4232 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		C725034629C057BC00EE4232 /* TextResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResultVC.swift; sourceTree = "<group>"; };
+		C725034829C058B800EE4232 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C73D1A42299B803100D3752F /* BetaBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetaBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C73D1A45299B803100D3752F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C73D1A47299B803100D3752F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,10 +82,26 @@
 		C73D1A77299CFF1F00D3752F /* CleanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanVC.swift; sourceTree = "<group>"; };
 		C73D1A85299DC72800D3752F /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtil.swift; sourceTree = "<group>"; };
 		C73D1A8A299DCC8F00D3752F /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		C73D1A8C299DCD0B00D3752F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C76EE8AA29C06E7D00B8B2B2 /* CountryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVC.swift; sourceTree = "<group>"; };
+		C76EE8AC29C0783D00B8B2B2 /* OCRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRVC.swift; sourceTree = "<group>"; };
+		C76EE8AE29C07EB900B8B2B2 /* CameraUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUtil.swift; sourceTree = "<group>"; };
+		C76EE8B029C0971000B8B2B2 /* OCRResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRResultVC.swift; sourceTree = "<group>"; };
 		C76F179029A48F1200820443 /* GADUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADUtil.swift; sourceTree = "<group>"; };
 		C76F179229A4903300820443 /* GADNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeView.swift; sourceTree = "<group>"; };
 		C76F179429A4959300820443 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
+		C7AD679129B5E6A7007FD186 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
+		C7AD679229B5E6A7007FD186 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C7AD679329B5E70B007FD186 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		C7AD679429B5E70B007FD186 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C7AD679929B5E83E007FD186 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C7AD679B29B5E844007FD186 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C7AD679C29B5E845007FD186 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C7AD67A029B5EDA4007FD186 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EnglishLocalizable.strings; sourceTree = "<group>"; };
+		C7AD67A229B5EDA5007FD186 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/EnglishLocalizable.strings; sourceTree = "<group>"; };
+		C7AD67A329B5EDA6007FD186 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/EnglishLocalizable.strings; sourceTree = "<group>"; };
+		C7D6D14029AD92210061BAF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4936729360177913BC4CC4B /* Pods-BetaBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetaBrowser.release.xcconfig"; path = "Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		FD62E1A4B400C7317517C7D2 /* Pods-BetaBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetaBrowser.debug.xcconfig"; path = "Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,24 +109,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C76F177229A4599500820443 /* SnapKit in Frameworks */,
-				C76F177A29A45A1900820443 /* FirebaseCrashlytics in Frameworks */,
-				C76F177529A459BD00820443 /* FacebookCore in Frameworks */,
-				C76F177829A45A1900820443 /* FirebaseAnalytics in Frameworks */,
-				C76F177C29A45A1900820443 /* FirebaseRemoteConfig in Frameworks */,
-				C76F177F29A45A5E00820443 /* Lottie in Frameworks */,
-				C76F178F29A46BBC00820443 /* GoogleMobileAds in Frameworks */,
+				C7D90CDB29CBFC14000F128B /* FacebookAEM in Frameworks */,
+				C7D90CE529CBFC95000F128B /* Lottie in Frameworks */,
+				C7D90CDF29CBFC14000F128B /* FacebookCore in Frameworks */,
+				C7D90CDD29CBFC14000F128B /* FacebookBasics in Frameworks */,
+				C7D90CE229CBFC50000F128B /* SnapKit in Frameworks */,
+				C7D90CD829CBFB65000F128B /* GoogleMobileAds in Frameworks */,
+				F87392C367E774FE37747B03 /* Pods_BetaBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D7DDC0C2843822F7417A69B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60D2FF960049973D4843B8AC /* Pods_BetaBrowser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7AC92276588A432E2DB7E42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD62E1A4B400C7317517C7D2 /* Pods-BetaBrowser.debug.xcconfig */,
+				D4936729360177913BC4CC4B /* Pods-BetaBrowser.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C725033D29C00AA100EE4232 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				C725034829C058B800EE4232 /* LoadingView.swift */,
+				C725033E29C00BEB00EE4232 /* TextTranslateVC.swift */,
+				C725034629C057BC00EE4232 /* TextResultVC.swift */,
+				C76EE8AA29C06E7D00B8B2B2 /* CountryListVC.swift */,
+				C76EE8AC29C0783D00B8B2B2 /* OCRVC.swift */,
+				C76EE8B029C0971000B8B2B2 /* OCRResultVC.swift */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
 		C73D1A39299B803100D3752F = {
 			isa = PBXGroup;
 			children = (
 				C73D1A44299B803100D3752F /* BetaBrowser */,
 				C73D1A43299B803100D3752F /* Products */,
+				B7AC92276588A432E2DB7E42 /* Pods */,
+				3D7DDC0C2843822F7417A69B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,12 +177,14 @@
 				C73D1A61299B828F00D3752F /* Util */,
 				C73D1A5C299B818B00D3752F /* Controller */,
 				C73D1A45299B803100D3752F /* AppDelegate.swift */,
+				C7D6D14029AD92210061BAF0 /* GoogleService-Info.plist */,
+				C7AD679A29B5E83E007FD186 /* Localizable.strings */,
+				C7AD67A129B5EDA4007FD186 /* EnglishLocalizable.strings */,
 				C73D1A47299B803100D3752F /* SceneDelegate.swift */,
 				C73D1A49299B803100D3752F /* ViewController.swift */,
 				C76F179429A4959300820443 /* GADConfig.json */,
 				C73D1A4B299B803100D3752F /* Main.storyboard */,
 				C73D1A8A299DCC8F00D3752F /* data.json */,
-				C73D1A8C299DCD0B00D3752F /* GoogleService-Info.plist */,
 				C73D1A4E299B803300D3752F /* Assets.xcassets */,
 				C73D1A50299B803300D3752F /* LaunchScreen.storyboard */,
 				C73D1A53299B803300D3752F /* Info.plist */,
@@ -126,6 +195,7 @@
 		C73D1A5C299B818B00D3752F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C725033D29C00AA100EE4232 /* Translate */,
 				C73D1A5F299B81A900D3752F /* BaseVC.swift */,
 				C73D1A5D299B819C00D3752F /* LaunchVC.swift */,
 				C73D1A64299B840900D3752F /* HomeVC.swift */,
@@ -147,6 +217,10 @@
 				C73D1A85299DC72800D3752F /* FirebaseUtil.swift */,
 				C76F179029A48F1200820443 /* GADUtil.swift */,
 				C76F179229A4903300820443 /* GADNativeView.swift */,
+				C725034029C04C8B00EE4232 /* TranslateUtil.swift */,
+				C725034429C052C000EE4232 /* NetworkUtil.swift */,
+				C725034229C0515300EE4232 /* ProfileUtil.swift */,
+				C76EE8AE29C07EB900B8B2B2 /* CameraUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -166,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C73D1A56299B803300D3752F /* Build configuration list for PBXNativeTarget "BetaBrowser" */;
 			buildPhases = (
+				B8FB997011A340BB16B76E1B /* [CP] Check Pods Manifest.lock */,
 				C73D1A3E299B803100D3752F /* Sources */,
 				C73D1A3F299B803100D3752F /* Frameworks */,
 				C73D1A40299B803100D3752F /* Resources */,
+				9EEA9DE7C4C70C1669373B34 /* [CP] Embed Pods Frameworks */,
+				9A431282052D3E3EAF3502A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +253,12 @@
 			);
 			name = BetaBrowser;
 			packageProductDependencies = (
-				C76F177129A4599500820443 /* SnapKit */,
-				C76F177429A459BD00820443 /* FacebookCore */,
-				C76F177729A45A1900820443 /* FirebaseAnalytics */,
-				C76F177929A45A1900820443 /* FirebaseCrashlytics */,
-				C76F177B29A45A1900820443 /* FirebaseRemoteConfig */,
-				C76F177E29A45A5E00820443 /* Lottie */,
-				C76F178E29A46BBC00820443 /* GoogleMobileAds */,
+				C7D90CD729CBFB65000F128B /* GoogleMobileAds */,
+				C7D90CDA29CBFC14000F128B /* FacebookAEM */,
+				C7D90CDC29CBFC14000F128B /* FacebookBasics */,
+				C7D90CDE29CBFC14000F128B /* FacebookCore */,
+				C7D90CE129CBFC50000F128B /* SnapKit */,
+				C7D90CE429CBFC95000F128B /* Lottie */,
 			);
 			productName = BetaBrowser;
 			productReference = C73D1A42299B803100D3752F /* BetaBrowser.app */;
@@ -204,20 +280,21 @@
 				};
 			};
 			buildConfigurationList = C73D1A3D299B803100D3752F /* Build configuration list for PBXProject "BetaBrowser" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				hi,
+				vi,
 			);
 			mainGroup = C73D1A39299B803100D3752F;
 			packageReferences = (
-				C76F177029A4599500820443 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C76F177329A459BD00820443 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C76F177D29A45A5D00820443 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				C76F178D29A46BBC00820443 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
+				C7D90CD629CBFB65000F128B /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
+				C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C7D90CE029CBFC50000F128B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C7D90CE329CBFC94000F128B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = C73D1A43299B803100D3752F /* Products */;
 			projectDirPath = "";
@@ -234,8 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73D1A52299B803300D3752F /* LaunchScreen.storyboard in Resources */,
+				C7AD679829B5E83E007FD186 /* Localizable.strings in Resources */,
+				C7AD679F29B5EDA4007FD186 /* EnglishLocalizable.strings in Resources */,
 				C73D1A4F299B803300D3752F /* Assets.xcassets in Resources */,
-				C73D1A8D299DCD0B00D3752F /* GoogleService-Info.plist in Resources */,
+				C7D6D14129AD92210061BAF0 /* GoogleService-Info.plist in Resources */,
 				C73D1A4D299B803100D3752F /* Main.storyboard in Resources */,
 				C76F179529A4959300820443 /* GADConfig.json in Resources */,
 				C73D1A8B299DCC8F00D3752F /* data.json in Resources */,
@@ -244,18 +323,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A431282052D3E3EAF3502A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EEA9DE7C4C70C1669373B34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetaBrowser/Pods-BetaBrowser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8FB997011A340BB16B76E1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BetaBrowser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C73D1A3E299B803100D3752F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C76F179329A4903300820443 /* GADNativeView.swift in Sources */,
+				C725034529C052C000EE4232 /* NetworkUtil.swift in Sources */,
+				C725033F29C00BEB00EE4232 /* TextTranslateVC.swift in Sources */,
+				C725034729C057BC00EE4232 /* TextResultVC.swift in Sources */,
+				C76EE8AD29C0783D00B8B2B2 /* OCRVC.swift in Sources */,
+				C725034929C058B800EE4232 /* LoadingView.swift in Sources */,
 				C73D1A4A299B803100D3752F /* ViewController.swift in Sources */,
 				C73D1A68299B8C5C00D3752F /* AppExt.swift in Sources */,
+				C725034329C0515300EE4232 /* ProfileUtil.swift in Sources */,
+				C76EE8B129C0971000B8B2B2 /* OCRResultVC.swift in Sources */,
+				C76EE8AB29C06E7D00B8B2B2 /* CountryListVC.swift in Sources */,
+				C76EE8AF29C07EB900B8B2B2 /* CameraUtil.swift in Sources */,
 				C73D1A65299B840900D3752F /* HomeVC.swift in Sources */,
 				C73D1A78299CFF1F00D3752F /* CleanVC.swift in Sources */,
 				C76F179129A48F1200820443 /* GADUtil.swift in Sources */,
 				C73D1A6A299C845200D3752F /* HomeVC+Action.swift in Sources */,
+				C725034129C04C8B00EE4232 /* TranslateUtil.swift in Sources */,
 				C73D1A76299CEB7A00D3752F /* AlertController.swift in Sources */,
 				C73D1A5E299B819C00D3752F /* LaunchVC.swift in Sources */,
 				C73D1A74299CE10900D3752F /* HTMLVC.swift in Sources */,
@@ -277,6 +425,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C73D1A4C299B803100D3752F /* Base */,
+				C7AD679129B5E6A7007FD186 /* hi */,
+				C7AD679329B5E70B007FD186 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -285,8 +435,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				C73D1A51299B803300D3752F /* Base */,
+				C7AD679229B5E6A7007FD186 /* hi */,
+				C7AD679429B5E70B007FD186 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C7AD679A29B5E83E007FD186 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7AD679929B5E83E007FD186 /* en */,
+				C7AD679B29B5E844007FD186 /* hi */,
+				C7AD679C29B5E845007FD186 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C7AD67A129B5EDA4007FD186 /* EnglishLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7AD67A029B5EDA4007FD186 /* en */,
+				C7AD67A229B5EDA5007FD186 /* hi */,
+				C7AD67A329B5EDA6007FD186 /* vi */,
+			);
+			name = EnglishLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -296,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -356,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -408,14 +582,16 @@
 		};
 		C73D1A57299B803300D3752F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD62E1A4B400C7317517C7D2 /* Pods-BetaBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7HTJ8C6E28;
+				DEVELOPMENT_TEAM = 59CN4J44AC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetaBrowser/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera permissions to recognize text.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -430,7 +606,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.BetaBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BetaBrowser.gocod.girl.boy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -443,14 +619,16 @@
 		};
 		C73D1A58299B803300D3752F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4936729360177913BC4CC4B /* Pods-BetaBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7HTJ8C6E28;
+				DEVELOPMENT_TEAM = 59CN4J44AC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetaBrowser/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera permissions to recognize text.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -465,7 +643,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.BetaBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BetaBrowser.gocod.girl.boy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -500,39 +678,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C76F177029A4599500820443 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-		C76F177329A459BD00820443 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		C76F177D29A45A5D00820443 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-		C76F178D29A46BBC00820443 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
+		C7D90CD629CBFB65000F128B /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quanghits/GoogleMobileAds";
 			requirement = {
@@ -540,43 +686,62 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		C7D90CE029CBFC50000F128B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		C7D90CE329CBFC94000F128B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C76F177129A4599500820443 /* SnapKit */ = {
+		C7D90CD729CBFB65000F128B /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C76F177029A4599500820443 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
+			package = C7D90CD629CBFB65000F128B /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
+			productName = GoogleMobileAds;
 		};
-		C76F177429A459BD00820443 /* FacebookCore */ = {
+		C7D90CDA29CBFC14000F128B /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C76F177329A459BD00820443 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		C7D90CDC29CBFC14000F128B /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		C7D90CDE29CBFC14000F128B /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7D90CD929CBFC14000F128B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookCore;
 		};
-		C76F177729A45A1900820443 /* FirebaseAnalytics */ = {
+		C7D90CE129CBFC50000F128B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
+			package = C7D90CE029CBFC50000F128B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
-		C76F177929A45A1900820443 /* FirebaseCrashlytics */ = {
+		C7D90CE429CBFC95000F128B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		C76F177B29A45A1900820443 /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C76F177629A45A1900820443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		C76F177E29A45A5E00820443 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C76F177D29A45A5D00820443 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = C7D90CE329CBFC94000F128B /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		C76F178E29A46BBC00820443 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C76F178D29A46BBC00820443 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
-			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

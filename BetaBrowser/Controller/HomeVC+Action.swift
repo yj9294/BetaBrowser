@@ -49,7 +49,7 @@ extension HomeVC {
             vc.handle = {
                 FirebaseUtil.log(event: .cleanSuccess)
                 FirebaseUtil.log(event: .cleanAlert)
-                self.alert("Clean successfully.")
+                self.alert("clean_successful".localized())
             }
         }
     }
@@ -58,6 +58,20 @@ extension HomeVC {
         let vc = TabVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
+    }
+    
+    @objc func textTranslateAction() {
+        let vc = TextTranslateVC()
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
+    }
+    
+    @objc func ocrTranslateAction() {
+        let vc = OCRVC()
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
     }
     
     @objc func settingAction() {
@@ -74,7 +88,7 @@ extension HomeVC {
                 self.observerViewStatus()
                 FirebaseUtil.log(event: .tabNew, params: ["lig": "setting"])
             case .share:
-                var url = "https://itunes.apple.com/cn/app/id"
+                var url = "https://itunes.apple.com/cn/app/id6445883543"
                 if !BrowserUtil.shared.item.isNavigation, let text = BrowserUtil.shared.item.webView.url?.absoluteString {
                     url = text
                 }
@@ -84,10 +98,10 @@ extension HomeVC {
             case .copy:
                 if !BrowserUtil.shared.item.isNavigation, let text = BrowserUtil.shared.item.webView.url?.absoluteString {
                     UIPasteboard.general.setValue(text, forPasteboardType: kUTTypePlainText as String)
-                    self.alert("Copy successed.")
+                    self.alert("copy_successful".localized())
                 } else {
                     UIPasteboard.general.setValue("", forPasteboardType: kUTTypePlainText as String)
-                    self.alert("Copy successed.")
+                    self.alert("copy_successful".localized())
                 }
                 FirebaseUtil.log(event: .copyClick)
             case .terms:
@@ -100,10 +114,14 @@ extension HomeVC {
                 let navi = UINavigationController(rootViewController: vc)
                 navi.modalPresentationStyle = .fullScreen
                 self.present(navi, animated: true)
-            case .contact:
-                if let url = URL(string: "https://itunes.apple.com/cn/app/id") {
+            case .rate:
+                if let url = URL(string: "https://itunes.apple.com/cn/app/id6445883543") {
                     UIApplication.shared.open(url)
                 }
+            case .language:
+                AppUtil.shared.isTranslate.toggle()
+            case .dark:
+                AppUtil.shared.darkModel.toggle()
             }
         }
     }

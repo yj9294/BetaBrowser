@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1088795628198-o30gttkvb3ioqj3jpa8nssrfbbadq3eh.apps.googleusercontent.com</string>
+	<string>260843333313-mv4hqhkdjansu1d6g55s26ts1ckd3m4n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1088795628198-o30gttkvb3ioqj3jpa8nssrfbbadq3eh</string>
+	<string>com.googleusercontent.apps.260843333313-mv4hqhkdjansu1d6g55s26ts1ckd3m4n</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCL352YPJ8yAhv-WelgAI8CMC0xbuJyJqU</string>
+	<string>AIzaSyA-gp5cvpTnbc_su6WWEHAM6PHOaKnoZ1E</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1088795628198</string>
+	<string>260843333313</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.testbird.spark.2</string>
+	<string>com.BetaBrowser.gocod.girl.boy.test</string>
 	<key>PROJECT_ID</key>
-	<string>testbird-f2fe7</string>
+	<string>beat-browser-c7bc5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>testbird-f2fe7.appspot.com</string>
+	<string>beat-browser-c7bc5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1088795628198:ios:52ec35ee7ed596e92dda67</string>
+	<string>1:260843333313:ios:8c6e5d0449b1204ed51640</string>
 </dict>
 </plist>

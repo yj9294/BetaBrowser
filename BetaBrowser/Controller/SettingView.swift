@@ -26,7 +26,7 @@ class SettingView: UIView {
     
     func setupUI(){
         
-        self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.backgroundColor = AppUtil.shared.darkModel ? UIColor(white: 1, alpha: 0.5) : UIColor(white: 0, alpha: 0.5)
         let button = UIButton()
         button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
         addSubview(button)
@@ -35,7 +35,7 @@ class SettingView: UIView {
         }
         
         let contentView = UIView()
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = AppUtil.shared.darkModel ? .black : .white
         contentView.cornerRadius = 16
         self.addSubview(contentView)
         contentView.snp.makeConstraints { make in
@@ -45,18 +45,18 @@ class SettingView: UIView {
         }
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.clear
         collectionView.register(SettingCell.classForCoder(), forCellWithReuseIdentifier: "SettingCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.layer.masksToBounds = false
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(40)
-            make.left.equalTo(contentView).offset(36)
-            make.right.equalTo(contentView).offset(-36)
-            make.bottom.equalTo(contentView).offset(-40)
-            make.height.equalTo(0)
+            make.top.equalTo(contentView).offset(24)
+            make.left.equalTo(contentView).offset(0)
+            make.right.equalTo(contentView).offset(0)
+            make.bottom.equalTo(contentView).offset(-24)
+            make.height.equalTo(228)
         }
     }
     
@@ -78,24 +78,20 @@ extension SettingView: UICollectionViewDelegateFlowLayout, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let width = (width - 16*2 - 36 * 2 - 60*2) / 3.0 - 5 + 23
-        collectionView.snp.updateConstraints { make in
-            make.height.equalTo(width * 2 + 28)
-        }
         return SettingItem.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 28
+        return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 60
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (width - 16*2 - 36 * 2 - 60*2) / 3.0 - 5
-        return CGSize(width: width, height: width + 23)
+        let width = (width - 16*2 ) / 2.0 - 10
+        return CGSize(width: width, height: 32)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -129,46 +125,37 @@ class SettingCell: UICollectionViewCell {
     }
     
     func setupUI() {
+        self.backgroundColor = .clear
+        self.backgroundView?.backgroundColor = .clear
         
         self.addSubview(icon)
         icon.snp.makeConstraints { make in
-            make.centerX.equalTo(self)
-            make.top.equalTo(self)
+            make.centerY.equalTo(self)
+            make.left.equalTo(self).offset(20)
+            make.width.height.equalTo(32)
         }
         
         self.addSubview(title)
         title.snp.makeConstraints { make in
-            make.top.equalTo(icon.snp.bottom).offset(8)
-            make.centerX.equalTo(self)
+            make.left.equalTo(icon.snp.right).offset(14)
+            make.centerY.equalTo(self)
         }
     }
     
     var item: SettingItem? = nil {
         didSet {
             if let image = item?.icon {
-                icon.image = UIImage(named:image)
+                icon.image = UIImage(named: AppUtil.shared.darkModel ? "\(image)_dark" : image)
             }
-            title.text = item?.title
+            title.text = item?.rawValue.localized()
+            title.textColor = AppUtil.shared.darkModel ? .white : UIColor(named: "#333333")
         }
     }
 }
 
 enum SettingItem: String, CaseIterable {
     
-    case new, share, copy, terms, contact, privacy
-    
-    var title: String {
-        switch self {
-        case .terms:
-            return "Terms of Use"
-        case .privacy:
-            return "Privacy Policy"
-        case .contact:
-            return "Contact us"
-        default:
-            return self.rawValue.capitalized
-        }
-    }
+    case new, share, copy, terms, rate, privacy, language, dark
     
     var icon: String {
         return "setting_\(self)"

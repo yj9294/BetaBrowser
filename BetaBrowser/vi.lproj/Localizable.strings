@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  BetaBrowser
+
+  Created by yangjian on 2023/3/6.
+  
+*/
+
+"facebook" = "Facebook";
+"google" = "Google";
+"youtube" = "Youtube";
+"twitter" = "Twitter";
+"instagram" = "Instagram";
+"amazon" = "Amazon";
+"gmail" = "Gmail";
+"yahoo" = "Yahoo";
+"new" = "Mới";
+"copy" = "Sao chép";
+"share" = "Chia sẻ";
+"terms" = "Điều khoản sử dụng";
+"rate" = "Kết nối với chúng tôi";
+"privacy" = "Chính sách bảo mật";
+"dark" = "Mô hình bóng tối";
+"language" = "ngôn ngữ";
+"search_placeholder" = "Tìm kiếm hoặc nhập địa chỉ";
+"clean_alert" = "Đóng tab và xóa dữ liệu";
+"cancel_title" = "Hủy";
+"confirm_title" = "Xác nhận";
+"cleaning" = "Dọn dẹp...";
+"clean_successful" = "Làm sạch thành công";
+"copy_successful" = "Sao chép thành công";
+"back" = "Quay lại";

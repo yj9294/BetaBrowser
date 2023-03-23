@@ -91,8 +91,8 @@ extension TabVC {
         
         let backButton = UIButton()
         bottomView.addSubview(backButton)
-        backButton.setTitle("Back", for: .normal)
-        backButton.setTitleColor(UIColor.black, for: .normal)
+        backButton.setTitle("back".localized(), for: .normal)
+        backButton.setTitleColor(AppUtil.shared.darkModel ? .white : .black, for: .normal)
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         backButton.snp.makeConstraints { make in
             make.centerY.equalTo(bottomView)
