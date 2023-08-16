@@ -152,6 +152,13 @@ extension HomeVC {
         searchView.layer.borderWidth = 1
         searchView.cornerRadius = 8
         view.addSubview(searchView)
+        var width = 375.0;
+        if let view = AppUtil.shared.sceneDelegate?.window  {
+            width = view.frame.width;
+        }
+        let iPhoneSE = width == 375.00
+        let radio =  304.0 / 108.0
+        
         searchView.snp.makeConstraints { make in
             make.top.equalTo(view.snp_topMargin).offset(20)
             make.left.equalTo(view.snp.left).offset(28)
@@ -185,7 +192,7 @@ extension HomeVC {
         
         view.addSubview(progressView)
         progressView.snp.makeConstraints { make in
-            make.top.equalTo(searchView.snp.bottom).offset(13)
+            make.top.equalTo(searchView.snp.bottom).offset(8)
             make.left.right.equalTo(searchView)
             make.height.equalTo(1)
         }
@@ -200,44 +207,54 @@ extension HomeVC {
         
         view.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(progressView.snp.bottom).offset(10)
+            make.top.equalTo(progressView.snp.bottom).offset(iPhoneSE ? 0 : 10)
             make.left.right.equalTo(view)
             make.bottom.equalTo(bottomView.snp.top)
         }
         
+        let w = (width - 32 - 16) / 2.0
+        
         let textBackground: UIImageView = UIImageView(image: UIImage(named: "text_translate"))
         textBackground.isUserInteractionEnabled = true
-        textBackground.contentMode = .scaleAspectFill
+        textBackground.contentMode = .scaleToFill
         contentView.addSubview(textBackground)
         textBackground.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(28)
-            make.left.equalTo(contentView).offset(28)
-            make.right.equalTo(contentView).offset(-28)
+            make.top.equalTo(contentView).offset(iPhoneSE ? 10 : 28)
+            make.left.equalToSuperview().offset(16)
+            make.width.equalTo(w)
+            make.height.equalTo(w / radio)
         }
     
         
-        let textIcon: UIImageView = UIImageView(image: UIImage(named: "text_translate_title"))
+        let textIcon: UILabel = UILabel()
+        textIcon.text = "Text Translate";
+        textIcon.textColor = UIColor.black
+        textIcon.font = UIFont.systemFont(ofSize: iPhoneSE ? 12 : 16)
         textBackground.addSubview(textIcon)
         textIcon.snp.makeConstraints { make in
             make.centerY.equalTo(textBackground)
-            make.right.equalTo(textBackground).offset(-26)
+            make.right.equalTo(textBackground).offset(iPhoneSE ? -15 : -26)
         }
         
         let ocrBackground: UIImageView = UIImageView(image: UIImage(named: "ocr_translate"))
         ocrBackground.isUserInteractionEnabled = true
-        ocrBackground.contentMode = .scaleAspectFill
+        ocrBackground.contentMode = .scaleToFill
         contentView.addSubview(ocrBackground)
         ocrBackground.snp.makeConstraints { make in
-            make.top.equalTo(textBackground.snp.bottom).offset(16)
-            make.left.equalTo(contentView).offset(28)
-            make.right.equalTo(contentView).offset(-28)
+            make.top.equalTo(contentView).offset(iPhoneSE ? 10 : 18)
+            make.left.equalTo(textBackground.snp.right).offset(16)
+            make.width.equalTo(w)
+            make.height.equalTo(w / radio)
         }
         
-        let ocrIcon: UIImageView = UIImageView(image: UIImage(named: "ocr_translate_title"))
+        let ocrIcon: UILabel = UILabel()
+        ocrIcon.text = "Text Translate";
+        ocrIcon.textColor = UIColor.black
+        ocrIcon.font = UIFont.systemFont(ofSize: iPhoneSE ? 12 : 16)
         ocrBackground.addSubview(ocrIcon)
         ocrIcon.snp.makeConstraints { make in
             make.centerY.equalTo(ocrBackground)
-            make.right.equalTo(ocrBackground).offset(-26)
+            make.right.equalTo(ocrBackground).offset(iPhoneSE ? -15 : -26)
         }
         
         contentView.addSubview(textTranslateButton)
@@ -262,7 +279,7 @@ extension HomeVC {
             make.top.equalTo(ocrBackground.snp.bottom).offset(36)
             make.left.equalTo(contentView).offset(16)
             make.right.equalTo(contentView).offset(-16)
-            make.height.equalTo(0)
+            make.height.equalTo((width / 4.0 - 10) * 2 + 20)
         }
                 
         contentView.addSubview(adView)
@@ -348,13 +365,6 @@ extension HomeVC {
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        collectionView.snp.updateConstraints { make in
-            if (view.window?.bounds.size.height ?? 0) <= 667 {
-                make.height.equalTo(40)
-            } else {
-                make.height.equalTo((width / 4.0 - 10) * 2 + 20)
-            }
-        }
         return HomeItem.allCases.count
     }
     
